@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Employee Details
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/js/bootstrapUI.js"></script>
+    <script src="../scripts/js/app.js"></script>
+</head>
+<body ng-app="employeeApp" ng-controller="employeeCtrl">
+    <div class="container" style="width: 750px;">
+         <h3>Employee Details Form</h3>
+         <form class="form-horizontal" name="myForm">
+          <div class="row">
+              <div class="col-sm-6">
+                  <div class="form-group  marginRight-0">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" class="form-control" name="firstName" tabindex="1" placeholder="Enter First Name" ng-model="AddEmployee.firstName">
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" class="form-control" name="lastName" tabindex="2" placeholder="Enter Last Name" ng-model="AddEmployee.lastName">
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-6">
+                  <div class="form-group  marginRight-0">
+                    <label for="age">Age:</label>
+                    <input type="number" min="1" max="100" class="form-control" name="age" tabindex="3" placeholder="Enter Age" ng-model="AddEmployee.age">
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" class="form-control" name="dob" tabindex="4" placeholder="Enter Date of Birth" ng-model="AddEmployee.dob" pattern="dd/MM/YYYY">
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-6">
+                  <div class="form-group  marginRight-0">
+                    <label for="city">City:</label>
+                    <select class="form-control" name="city" tabindex="5" ng-options="user.city for user in arrlist" ng-model="AddEmployee.city">
+                    <option value="">--Select City--</option>
+                    </select>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="checkbox checkbox-margin">
+                    <label><input type="checkbox" tabindex="6" name="areYouFresher" ng-model="AddEmployee.areYouFresher">Are You Fresher?</label>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-12">
+                  <button type="submit" id="Add" tabindex="7" class="btn btn-success btn-lg pull-right m-0" ng-click="saveEmployeeDetails()">Add</button>
+                  <button type="submit" id="Update" tabindex="8" class="btn btn-success btn-lg pull-right hide" ng-click="updateEmployeeDetails(); toggle($event)">Update</button>
+                  <p id="successMsg" class="text-success"><strong>{{msg}}</strong></p>
+              </div>
+          </div>
+        </form> 
+        <hr/>
+        <div ng-include="'_employeeListPartial.html'"></div>
+        <div ng-include="'_modelPartial.html'"></div>
+        <div ng-include="'_paginationPartial.html'"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>DOB</th>
+        <th>City</th>
+        <th>Are You Fresher?</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="emp in EmployeeDetails">
+        <td>{{emp.firstName}}</td>
+        <td>{{emp.lastName}}</td>
+        <td>{{emp.age}}</td>
+        <td>{{emp.dob}}</td>
+        <td>{{emp.city.city}}</td>
+        <td>{{emp.areYouFresher}}</td>
+        <td><button type="button" class="btn btn-info btn-sm" ng-click="selectEmployee(emp); toggle($event)">Edit</button></td>
+        <td><button type="button" class="btn btn-danger btn-sm" ng-click="selectEmployee(emp)" data-toggle="modal" data-target="#DeleteEmployee" >Delete</button></td>
+      </tr>
+    </tbody>
+</table>
+<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>

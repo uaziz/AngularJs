@@ -1,0 +1,43 @@
+body
+{
+    background: #d7dae0;
+}
+.left-field 
+{
+  margin-right: 30px;
+  padding-right: 20px;
+  float:left; 
+}
+
+.right-field 
+{
+  margin-right: 10px;
+  float: right;
+}
+
+.marginLeft-20 
+{
+  margin-left: 20px !important; 
+}
+
+.marginRight-0 
+{
+  margin-right: 0px !important; 
+}
+
+.form-control 
+{
+    width: 95%;
+}
+
+h3
+{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.form-horizontal .checkbox
+{
+    margin-top: 30px;
+    margin-left: -10px;
+}
